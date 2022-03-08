@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/fragmentHome"
+        android:icon="@drawable/ic_home"
+        android:title="@string/home" />
+    <item
+        android:id="@+id/fragmentSetting"
+        android:icon="@drawable/ic_settings"
+        android:title="@string/settings" />
+    <item
+        android:id="@+id/fragmentNotification"
+        android:icon="@drawable/ic_notifications"
+        android:title="@string/notifications" />
+    <item android:title="@string/info">
+        <menu>
+            <item
+                android:id="@+id/fragmentAboutApp"
+                android:icon="@drawable/ic_info"
+                android:title="@string/about_this_app" />
+        </menu>
+    </item>
+
+</menu>

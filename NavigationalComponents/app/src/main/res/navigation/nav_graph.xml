@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragmentSplash">
+
+    <fragment
+        android:id="@+id/fragmentSplash"
+        android:name="com.example.navigationalcomponents.fragments.FragmentSplash"
+        android:label="Splash Screen"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_fragmentSplash_to_fragmentHome"
+            app:destination="@id/fragmentHome"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/fragmentSplash"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentHome"
+        android:name="com.example.navigationalcomponents.fragments.FragmentHome"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_fragmentHome_to_fragmentScore"
+            app:destination="@id/fragmentScore"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_fragmentHome_to_fragmentProfile"
+            app:destination="@id/fragmentProfile"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentScore"
+        android:name="com.example.navigationalcomponents.fragments.FragmentScore"
+        android:label="Scores"
+        tools:layout="@layout/fragment_score" />
+    <fragment
+        android:id="@+id/fragmentProfile"
+        android:name="com.example.navigationalcomponents.fragments.FragmentProfile"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_fragmentProfile_to_fragmentTest"
+            app:destination="@id/fragmentTest"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <argument
+            android:name="username"
+            android:defaultValue="asd"
+            app:argType="string" />
+        <deepLink
+            android:id="@+id/deepLink2"
+            app:uri="www.nav.com/{username}" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentTest"
+        android:name="com.example.navigationalcomponents.fragments.FragmentTest"
+        android:label="Test"
+        tools:layout="@layout/fragment_test">
+        <action
+            android:id="@+id/action_fragmentTest_to_fragmentSuccess"
+            app:destination="@id/fragmentSuccess"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_fragmentTest_to_fragmentFailure"
+            app:destination="@id/fragmentFailure"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <argument
+            android:name="player"
+            app:argType="com.example.navigationalcomponents.models.Player" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentSuccess"
+        android:name="com.example.navigationalcomponents.fragments.FragmentSuccess"
+        android:label="Success"
+        tools:layout="@layout/fragment_success">
+        <action
+            android:id="@+id/action_fragmentSuccess_to_fragmentHome"
+            app:destination="@id/fragmentHome"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/fragmentHome"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentFailure"
+        android:name="com.example.navigationalcomponents.fragments.FragmentFailure"
+        android:label="Failure"
+        tools:layout="@layout/fragment_failure">
+        <action
+            android:id="@+id/action_fragmentFailure_to_fragmentScore"
+            app:destination="@id/fragmentScore"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentSetting"
+        android:name="com.example.navigationalcomponents.fragments.FragmentSetting"
+        android:label="@string/settings"
+        tools:layout="@layout/fragment_setting" />
+    <fragment
+        android:id="@+id/fragmentAboutApp"
+        android:name="com.example.navigationalcomponents.fragments.FragmentAboutApp"
+        android:label="About App"
+        tools:layout="@layout/fragment_about_app" />
+    <action
+        android:id="@+id/action_global_fragmentAboutApp"
+        app:destination="@id/fragmentAboutApp"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
+    <fragment
+        android:id="@+id/fragmentNotification"
+        android:name="com.example.navigationalcomponents.fragments.FragmentNotification"
+        android:label="Notifications"
+        tools:layout="@layout/fragment_notification" />
+</navigation>
